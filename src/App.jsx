@@ -1,9 +1,10 @@
+import Buscador from "./components/Buscador";
 import SeccionPokemons from "./components/SeccionPokemons";
 
 function App() {
   return (
-    <div className="App container mx-auto p-4">
-      <h1>Pokedex</h1>
+    <div className="App  bg-gradient-to-t from-gray-200 to-gray-300">
+      <Buscador />
       <SeccionPokemons />
     </div>
   );
