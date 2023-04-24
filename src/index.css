@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "pokemon";
+    src: url("/fonts/PokemonGb-RAeo.ttf");
+  }
+}
+
+body {
+  font-family: "pokemon", sans-serif;
+  background-color: gainsboro;
+}
+
+.fade-in {
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 1s ease-out both;
+  animation: fade-out 1s ease-out both;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.typeGrass {
+  background-image: url("/img/grass_type.jpg");
+}
+.typeWater {
+  background-image: url("/img/water_type.jpg");
+}
+.typeFire {
+  background-image: url("/img/fire_type.jpg");
+}
+.typeFlying {
+  background-image: url("/img/flying_type.jpg");
+}
+.typeNormal {
+  background-image: url("/img/normal_type.jpg");
+}
+.typeGhost {
+  background-image: url("/img/ghost_type.jpg");
+}
+.typeSteel {
+  background-image: url("/img/steel_type.jpg");
+}
+.typePoison {
+  background-image: url("/img/poison_type.jpg");
+}
+.typeFairy {
+  background-image: url("/img/fairy_type.jpg");
+}
+.typeRock {
+  background-image: url("/img/rock_type.jpg");
+}
+.typePsychic {
+  background-image: url("/img/psychic_type.jpg");
+}
+.typeIce {
+  background-image: url("/img/ice_type.jpg");
+}
+.typeElectric {
+  background-image: url("/img/electric_type.jpg");
+}
+.typeGround {
+  background-image: url("/img/ground_type.jpg");
+}
+.typeBug {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1fa0f80-33c1-4516-8baa-90fb67ed2269/dfsf928-d7da195e-d073-4ea7-888a-580ffb04f5b6.png/v1/fill/w_1024,h_576,q_80,strp/bug_type_pokemon_go_wallpaper___qhd___by_elbarnzo_dfsf928-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvZDFmYTBmODAtMzNjMS00NTE2LThiYWEtOTBmYjY3ZWQyMjY5XC9kZnNmOTI4LWQ3ZGExOTVlLWQwNzMtNGVhNy04ODhhLTU4MGZmYjA0ZjViNi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.fBiRYJtwV0NiYDuRcgFn3Sjis6x-Qldh4F7Fj3calG4");
+}
+.typeDark {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1fa0f80-33c1-4516-8baa-90fb67ed2269/dfrxgkx-2ef38663-6b1d-40e6-a971-2203b1ff93ed.png/v1/fill/w_1024,h_576,q_80,strp/dark_type_pokemon_go_wallpaper___qhd___by_elbarnzo_dfrxgkx-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvZDFmYTBmODAtMzNjMS00NTE2LThiYWEtOTBmYjY3ZWQyMjY5XC9kZnJ4Z2t4LTJlZjM4NjYzLTZiMWQtNDBlNi1hOTcxLTIyMDNiMWZmOTNlZC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.uyyjcjoY0ev59BiBZtrLfiPwB3Ixgc9lDyyqilp6FTo");
+}
+.typeDragon {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1fa0f80-33c1-4516-8baa-90fb67ed2269/dfruokc-21f72482-4d4b-4c8d-847c-0aa0388df237.png/v1/fill/w_1024,h_576,q_80,strp/dragon_type_pokemon_go_wallpaper___qhd___by_elbarnzo_dfruokc-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvZDFmYTBmODAtMzNjMS00NTE2LThiYWEtOTBmYjY3ZWQyMjY5XC9kZnJ1b2tjLTIxZjcyNDgyLTRkNGItNGM4ZC04NDdjLTBhYTAzODhkZjIzNy5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.aWvVVb5sMqN8mgrYlfNWNdQjPHEghYQ4hpagXDY7uxc");
+}
+.typeFighting {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d1fa0f80-33c1-4516-8baa-90fb67ed2269/dfrf41z-16f1cc0b-46d2-497e-ba26-93675be9a9f8.png/v1/fill/w_1024,h_576,q_80,strp/fighting_type_pokemon_go_wallpaper___qhd___by_elbarnzo_dfrf41z-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvZDFmYTBmODAtMzNjMS00NTE2LThiYWEtOTBmYjY3ZWQyMjY5XC9kZnJmNDF6LTE2ZjFjYzBiLTQ2ZDItNDk3ZS1iYTI2LTkzNjc1YmU5YTlmOC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.LkPKjRF36YQLCOhz-x7AxdDWpufV9ByMSFRjxRu1v1s");
+}
