@@ -46,8 +46,6 @@ const InfoPokemon = () => {
         return "typeDragon";
       case "fighting":
         return "typeFighting";
-        break;
-
       default:
         break;
     }
@@ -63,14 +61,14 @@ const InfoPokemon = () => {
             )}`}
           >
             <div className="mx-auto">
-              <p className="mx-auto mt-1 text-xs text-white md:mt-0 md:text-base">
+              <p className="mx-auto mt-1 text-xs text-white md:mt-0 md:text-base ml-2">
                 {pokemons.name.toUpperCase()}
               </p>
 
               <img
                 src={pokemons.sprites.front_default}
                 alt="imagen_pokemon"
-                className="mx-auto"
+                className="mx-auto bounce-top"
               />
             </div>
             <div className="col-span-2">

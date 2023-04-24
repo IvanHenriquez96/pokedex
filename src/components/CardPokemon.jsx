@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const CardPokemon = ({ name, url }) => {
@@ -55,7 +55,6 @@ const CardPokemon = ({ name, url }) => {
         return "typeDragon";
       case "fighting":
         return "typeFighting";
-        break;
 
       default:
         break;

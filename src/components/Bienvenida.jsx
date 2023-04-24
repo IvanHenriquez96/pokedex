@@ -22,6 +22,7 @@ const Bienvenida = () => {
       setDialogoDesplegado(dialogoDesplegado + 1);
     } else {
       // document.querySelector("#page_intro").classList.add("fade-out");
+      div_bienvenida.current.classList.add("fade-out");
       setTimeout(() => {
         navigate("/pokedex");
       }, 1000);
@@ -29,9 +30,15 @@ const Bienvenida = () => {
   };
 
   return (
-    <div onClick={siguienteTexto} ref={div_bienvenida} className="fade-in">
-      <img src="img/oak.png" alt="profesor oak" className="mx-auto w-52" />
-      <CajaDialogo dialogo={dialogos[dialogoDesplegado]} />
+    <div className="relative">
+      <div ref={div_bienvenida} className="fade-in">
+        <img src="img/oak.png" alt="profesor oak" className="mx-auto w-52" />
+        <CajaDialogo dialogo={dialogos[dialogoDesplegado]} />
+      </div>
+      <div
+        onClick={siguienteTexto}
+        className=" absolute z-10 left-0 top-0 right-0 bottom-0"
+      ></div>
     </div>
   );
 };

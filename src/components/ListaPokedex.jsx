@@ -1,4 +1,5 @@
 import usePokemon from "../hooks/usePokemon";
+import Buscador from "./Buscador";
 import CardPokemon from "./CardPokemon";
 export const ListaPokedex = () => {
   const { pokemons, isError, isLoading } = usePokemon();
@@ -13,6 +14,7 @@ export const ListaPokedex = () => {
 
   return (
     <div>
+      <Buscador />
       <div className="mx-auto md:w-12/12 fade-in">
         <div className="gap-4 text-center md:grid-cols-4">
           <div className="grid gap-4  text-center md:grid-cols-4">
