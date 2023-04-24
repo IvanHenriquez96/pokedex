@@ -4,7 +4,7 @@ const LayoutPublic = () => {
   return (
     <div>
       <Link to={"/"}>
-        <img src="/src/assets/logo.png" className="w-64  mx-auto" alt="logo_pokemon" />
+        <img src="img/logo.png" className="w-64  mx-auto" alt="logo_pokemon" />
       </Link>
       <br />
       <br />
