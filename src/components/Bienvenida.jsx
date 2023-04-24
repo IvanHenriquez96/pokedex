@@ -30,7 +30,7 @@ const Bienvenida = () => {
 
   return (
     <div onClick={siguienteTexto} ref={div_bienvenida} className="fade-in">
-      <img src="/oak.png" alt="profesor oak" className="mx-auto w-52" />
+      <img src="img/oak.png" alt="profesor oak" className="mx-auto w-52" />
       <CajaDialogo dialogo={dialogos[dialogoDesplegado]} />
     </div>
   );
