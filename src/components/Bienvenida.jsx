@@ -32,7 +32,7 @@ const Bienvenida = () => {
   return (
     <div className="relative">
       <div ref={div_bienvenida} className="fade-in">
-        <img src="img/oak.png" alt="profesor oak" className="mx-auto w-52" />
+        <img src="/img/oak.png" alt="profesor oak" className="mx-auto w-52" />
         <CajaDialogo dialogo={dialogos[dialogoDesplegado]} />
       </div>
       <div
