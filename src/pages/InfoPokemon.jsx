@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import usePokemon from "../hooks/usePokemon";
+import BarraStats from "../components/BarraStats";
 
 const InfoPokemon = () => {
   let { id } = useParams();
@@ -61,7 +62,7 @@ const InfoPokemon = () => {
             )}`}
           >
             <div className="mx-auto">
-              <p className="mx-auto mt-1 text-xs text-white md:mt-0 md:text-base ml-2">
+              <p className="mx-auto mt-1 ml-2 text-xs text-white md:mt-0 md:text-base">
                 {pokemons.name.toUpperCase()}
               </p>
 
@@ -95,7 +96,7 @@ const InfoPokemon = () => {
           {/* STATS */}
 
           <div
-            className={`grid grid-cols-3 border-4 border-black border-double mt-7 m-2 ${asignarFondo(
+            className={`grid  grid-cols-4  border-4 border-black border-double mt-7 m-2 ${asignarFondo(
               pokemons.types[0].type.name
             )}`}
           >
@@ -111,7 +112,7 @@ const InfoPokemon = () => {
               </ul>
               <br />
             </div>
-            <div className="col-span-2">
+            <div className="">
               <br />
               <ul className="text-xs text-white md:text-base">
                 {pokemons.stats.map((stat, index) => {
@@ -123,6 +124,19 @@ const InfoPokemon = () => {
                 })}
               </ul>
               <br />
+            </div>
+
+            <div className="col-span-2 ">
+              <br />
+              <ul>
+                {pokemons.stats.map((stat, index) => {
+                  return (
+                    <li key={index} className="mt-2">
+                      <BarraStats valor_stat={stat.base_stat} />
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </div>
