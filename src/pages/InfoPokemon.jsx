@@ -52,6 +52,15 @@ const InfoPokemon = () => {
     }
   };
 
+  const diccionario = {
+    hp: "HP",
+    attack: "ATK",
+    defense: "DEF",
+    "special-attack": "S-ATK",
+    "special-defense": "S-DEF",
+    speed: "SPD",
+  };
+
   return (
     <>
       {!isLoading && (
@@ -93,50 +102,59 @@ const InfoPokemon = () => {
             </div>
           </div>
 
-          {/* STATS */}
+          {/* Abilities*/}
 
           <div
-            className={`grid  grid-cols-4  border-4 border-black border-double mt-7 m-2 ${asignarFondo(
+            className={`border-4 border-double m-2 border-black text-white text-sm ${asignarFondo(
               pokemons.types[0].type.name
             )}`}
           >
-            <div className="mx-auto">
-              <p className="p-1 mx-auto text-xs text-white md:text-base">STATS</p>
-              <ul className="text-xs text-white md:text-base">
-                <li className="mt-2">HP:</li>
-                <li className="mt-2">ATK:</li>
-                <li className="mt-2">DEF:</li>
-                <li className="mt-2">S-ATK:</li>
-                <li className="mt-2">S-DEF:</li>
-                <li className="mt-2">SPD:</li>
-              </ul>
-              <br />
-            </div>
-            <div className="">
-              <br />
-              <ul className="text-xs text-white md:text-base">
-                {pokemons.stats.map((stat, index) => {
-                  return (
-                    <li key={index} className="mt-2">
-                      {stat.base_stat}
-                    </li>
-                  );
-                })}
-              </ul>
-              <br />
-            </div>
+            <p className="mb-1 ml-2 md:ml-14">ABILITIES</p>
 
-            <div className="col-span-2 ">
-              <br />
-              <ul>
-                {pokemons.stats.map((stat, index) => {
-                  return (
-                    <li key={index} className="mt-2">
-                      <BarraStats valor_stat={stat.base_stat} />
-                    </li>
-                  );
-                })}
-              </ul>
+            <div className="grid grid-cols-2">
+              {pokemons.abilities.map((ab, index) => {
+                return (
+                  <div key={index} className="flex justify-center">
+                    <p
+                      className={`p-1 my-2 text-xs border-4 border-black border-double md:text-sm ${asignarFondo(
+                        pokemons.types[0].type.name
+                      )}`}
+                    >
+                      {ab.ability.name.toUpperCase()}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* STATS */}
+
+          <div
+            className={`border-4 border-double m-2 border-black text-white ${asignarFondo(
+              pokemons.types[0].type.name
+            )}`}
+          >
+            <div className="text-sm ">
+              <p className="mb-1 ml-2 md:ml-14">STATS</p>
+              <div>
+                <div>
+                  {pokemons.stats.map((stat, index) => {
+                    console.log(stat);
+                    return (
+                      <div key={index} className="grid grid-cols-6 mt-2">
+                        <p className="col-span-2 ml-2 text-sm md:ml-14 ">
+                          {diccionario[stat.stat.name]}:
+                        </p>
+                        <p>{stat.base_stat}</p>
+                        <div className="col-span-3">
+                          <BarraStats valor_stat={stat.base_stat} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
