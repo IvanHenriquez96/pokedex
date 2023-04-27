@@ -1,8 +1,8 @@
 import { useState } from "react";
-// import useFindPokemon from "../hooks/useFindPokemon";
 
-const Buscador = () => {
+const Buscador = ({ pokemons }) => {
   const [isWritting, setIsWritting] = useState(false);
+  const [listaPokemon, setListaPokemon] = useState(null);
 
   let tiempoDeEsperaId;
 
@@ -14,8 +14,16 @@ const Buscador = () => {
 
     tiempoDeEsperaId = setTimeout(() => {
       console.log("va a buscar");
-      // const x = useFindPokemon();
+      buscarPokemons(e.target.value);
     }, 2000);
+  };
+
+  const buscarPokemons = async (nombre) => {
+    console.log("buscó", nombre, pokemons);
+    let encontrados = await pokemons.results.filter((pkm) => {
+      return pkm.name.includes(nombre.toLowerCase());
+    });
+    setListaPokemon(encontrados);
   };
 
   return (
@@ -26,13 +34,23 @@ const Buscador = () => {
             onChange={writtingHandle}
             name="buscador"
             type="text"
-            className="  border-4 border-double border-black my-7 px-2 py-1 w-full md:w-2/5 "
+            className="w-full px-2 py-1 border-4 border-black border-double my-7 md:w-2/5"
             placeholder="Buscar Pokémon"
           />
         </div>
         {isWritting && (
-          <div className="absolute right-0 left-0 top-14 bg-gray-200 md:w-2/5 w-12/12 shadow-xl  min-h-fit mx-auto  z-10 ">
-            <p className="m-2">En Desarrollo</p>
+          <div className="absolute left-0 right-0 z-10 mx-auto bg-gray-200 shadow-xl top-14 md:w-2/5 w-12/12 min-h-fit ">
+            {listaPokemon == null ? (
+              <p className="m-2">Buscando</p>
+            ) : (
+              <ul>
+                {listaPokemon.map((pkm) => (
+                  <li className="my-3 ml-3" key={pkm.name}>
+                    {pkm.name}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </div>

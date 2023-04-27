@@ -88,7 +88,7 @@ const CardPokemon = ({ name, url }) => {
                       key={pkm.type.name}
                       className={`text-white ${asignarFondo(
                         pkm.type.name
-                      )} m-2 rounded md:text-xs my-auto p-1 border-4 border-double border-black text-sm`}
+                      )} mx-1 rounded text-xs my-auto p-1 border-4 border-double border-black text-sm`}
                     >
                       {pkm.type.name.toUpperCase()}
                     </p>

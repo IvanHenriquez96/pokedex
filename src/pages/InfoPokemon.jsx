@@ -4,7 +4,9 @@ import BarraStats from "../components/BarraStats";
 
 const InfoPokemon = () => {
   let { id } = useParams();
-  const { pokemons, isError, isLoading } = usePokemon(id);
+  const { pokemons, isError, isLoading } = usePokemon(
+    `https://pokeapi.co/api/v2/pokemon/${id}/`
+  );
 
   isLoading && <p>Cargando...</p>;
   isError && console.log(isError);
@@ -92,7 +94,7 @@ const InfoPokemon = () => {
                       key={pkm.type.name}
                       className={`text-white ${asignarFondo(
                         pkm.type.name
-                      )} m-2 rounded my-auto p-1 border-4 border-double border-black text-sm`}
+                      )} mx-1 rounded my-auto p-1 border-4 border-double border-black text-xs`}
                     >
                       {pkm.type.name.toUpperCase()}
                     </p>
