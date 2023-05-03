@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Buscador = ({ pokemons }) => {
   const [isWritting, setIsWritting] = useState(false);
@@ -15,7 +16,7 @@ const Buscador = ({ pokemons }) => {
     tiempoDeEsperaId = setTimeout(() => {
       console.log("va a buscar");
       buscarPokemons(e.target.value);
-    }, 2000);
+    }, 1000);
   };
 
   const buscarPokemons = async (nombre) => {
@@ -41,12 +42,15 @@ const Buscador = ({ pokemons }) => {
         {isWritting && (
           <div className="absolute left-0 right-0 z-10 mx-auto bg-gray-200 shadow-xl top-14 md:w-2/5 w-12/12 min-h-fit ">
             {listaPokemon == null ? (
-              <p className="m-2">Buscando</p>
+              // <p className="m-2">Buscando</p>
+              <p></p>
             ) : (
               <ul>
+                {/* {console.log(listaPokemon)} */}
                 {listaPokemon.map((pkm) => (
+                  // console.log(pkm);
                   <li className="my-3 ml-3" key={pkm.name}>
-                    {pkm.name}
+                    <Link to={`/pokedex/${pkm.name}`}>{pkm.name}</Link>
                   </li>
                 ))}
               </ul>

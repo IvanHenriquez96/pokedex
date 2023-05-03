@@ -7,7 +7,7 @@ export const ListaPokedex = () => {
 
   const { pokemons, isError, isLoading } = usePokemon(url);
 
-  const aux = usePokemon(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=150`);
+  const aux = usePokemon(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=9999`);
   const allPokemons = aux.pokemons;
 
   if (isError) return <div>Error al traer los datos</div>;
@@ -33,18 +33,20 @@ export const ListaPokedex = () => {
         </div>
       </div>
 
-      {/* <button className="w-full p-2 px-5 mx-auto my-5 text-white bg-orange-500 rounded">
-        More...
-      </button> */}
       <br />
-      <div className="flex justify-center text-white">
+      <div className="flex justify-center text-white mb-7">
         <button
-          className="px-5 m-2 bg-orange-500"
+          className="px-10 m-2 text-2xl bg-orange-500 border-4 border-double"
           onClick={() => setUrl(pokemons.previous)}
+          disabled={pokemons.previous == null}
         >
           {"<"}
         </button>
-        <button className="px-5 m-2 bg-orange-500" onClick={() => setUrl(pokemons.next)}>
+        <button
+          className="px-10 m-2 text-2xl bg-orange-500 border-4 border-double"
+          onClick={() => setUrl(pokemons.next)}
+          disabled={pokemons.next == null}
+        >
           {">"}
         </button>
       </div>

@@ -67,9 +67,6 @@ const CardPokemon = ({ name, url }) => {
     return (
       <>
         <Link to={`/pokedex/${pokemon.id}`}>
-          {/* <Link href={`/Pokemon/${encodeURIComponent(pokemon.id)}`}> */}
-          {/* MODO CELULAR */}
-
           <div
             className={` border-double border-4  border-gray-900  ${asignarFondo(
               pokemon.types[0].type.name
